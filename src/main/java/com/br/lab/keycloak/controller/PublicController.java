@@ -17,6 +17,7 @@ public class PublicController {
 		return "external";
 	}
 
+	@SuppressWarnings("unused")
 	@GetMapping(path = "/customers")
 	public String customers(Principal principal, Model model) {
 		
