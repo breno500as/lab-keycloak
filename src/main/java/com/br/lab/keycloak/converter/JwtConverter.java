@@ -31,7 +31,7 @@ public class JwtConverter implements Converter<Jwt, AbstractAuthenticationToken>
 	@SuppressWarnings("unchecked")
 	private Collection<? extends GrantedAuthority> extractResourceRoles(Jwt jwt) {
 
-		Map<String, Object> realmAccess = jwt.getClaim("realm_access");
+		Map<String, Object> realmAccess = jwt.getClaim("realm_access"); // Recupera as Realm Roles
 
 		Collection<String> realmRoles = Collections.emptyList();
 
@@ -39,7 +39,7 @@ public class JwtConverter implements Converter<Jwt, AbstractAuthenticationToken>
 			realmRoles = (Collection<String>) realmAccess.get("roles");
 		}
 
-		Map<String, Object> resourceAccess = jwt.getClaim("resource_access");
+		Map<String, Object> resourceAccess = jwt.getClaim("resource_access"); // Recupera as Client Roles
 
 		Collection<String> appClientRoles = Collections.emptyList();
 
